@@ -4,13 +4,50 @@
     <meta charset="UTF-8">
     <title>My Page</title>
 
-
     <link rel="stylesheet" type="text/css" href="main.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-	<span class="product-item">
-		Apple
-		<span class="amount">4</span>
-	</span>
+	<div class="container">
+		<div class="add-products-container">
+			<div class="add-products">
+				<input type="text" class="product-name" placeholder="Назва товару" />
+				<button class="add-product-button">Додати</button>
+			</div>
+			<ul class="product-list">
+				<li class="product-item">
+					<p class="product-label"><del>Apple</del></p>
+					<div class="product-amount">
+						<p class="amount-text">2</p>
+					</div>
+					<button class="delete-product-button">Не куплено</button>
+
+				</li>
+				<li class="product-item">
+					<p class="product-label">Печиво</p>
+					<div class="product-amount">
+						<button class="minus-button round-button">-</button>
+						<p class="amount-text">2</p>
+						<button class="plus-button round-button">+</button>
+					</div>
+					<button class="delete-product-button">Куплено</button>
+
+				</li>
+				<li class="product-item">
+					<p class="product-label">Сир</p>
+					<div class="product-amount">
+						<button class="minus-button round-button">-</button>
+						<p class="amount-text">1</p>
+						<button class="plus-button round-button">+</button>
+					</div>
+					<button class="delete-product-button">Куплено</button>
+
+				</li>
+			</ul>
+		</div>
+	</div>
+
 </body>
 </html>

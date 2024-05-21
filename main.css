@@ -1,3 +1,9 @@
+.body {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
 .product-item {
 	background-color: gray;
 	display: inline-block;
@@ -6,12 +12,93 @@
 	border-radius: 5px;
 }
 
-.amount {
-	background-color: yellow;
-	border-radius: 10px;
-	
+.amount-text{
+	background-color: lightgray;
+	border-radius: 5px;
 	display: inline-block;
-	height: 20px;
-	width: 20px;
+	height: 30px;
+	width: 30px;
 	text-align: center;
+	line-height: 30px;
+}
+
+.container {
+	background-color: lightgray;
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px 10px 20px 5px;
+}
+
+.add-products-container{
+	max-width: 60%;
+	background-color: white;
+}
+
+.add-products{
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	border-radius: 5px;
+}
+
+.product-name {
+	display: inline-block;
+	width: 80%;
+	height: 30px;
+	padding-left: 10px;
+}
+
+.add-product-button{
+	display: inline-block;
+	width: 20%;
+	height: 36px;
+	background-color: blue;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-bottom: 4px solid darkblue;
+}
+
+.product-list{
+	list-style-type: none;
+	background-color: white;
+	padding: 0;
+}
+
+.product-item{
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px solid lightgray;
+	border-top: 1px solid lightgray;
+	border-radius: 0;
+}
+
+.delete-product-button{
+	font-weight: bold;
+	padding: 5px 13px 5px 13px;
+}
+
+.round-button{
+	border-radius: 50%;
+	color: white;
+	font-weight: bold;
+	border: none;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+}
+
+.minus-button{
+	background-color: red;
+}
+
+.plus-button{
+	background-color: green;
+}
+
+.product-label{
+
 }
