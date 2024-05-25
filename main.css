@@ -1,11 +1,25 @@
-.body {
+body {
 	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 }
 
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.crossed-out {
+	text-decoration: line-through;
+}
+
+.transparent-item {
+	opacity: 0.5; /* Adjust as needed */
+}
+
 .product-item {
-	background-color: gray;
+	background-color: #e7e8e7;
 	display: inline-block;
 	height: 25px;
 	padding: 5px;
@@ -20,43 +34,71 @@
 	width: 30px;
 	text-align: center;
 	line-height: 30px;
+	font-size: 13px;
+}
+
+.product-amount{
+	width: 100px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	font-weight: bold;
+	color: #646464;
 }
 
 .container {
 	background-color: lightgray;
 	width: 80%;
+	height: 100%;
 	margin: 0 auto;
 	padding: 10px 10px 20px 5px;
+	display: flex;
 }
 
 .add-products-container{
-	max-width: 60%;
 	background-color: white;
+	flex-grow: 2;
+	margin-right: 40px;
+	overflow: hidden;
+	border-radius: 5px;
+	height: 90%;
+
+}
+
+.cart-container{
+	flex-grow: 1;
+	background-color: white;
+	border-radius: 5px;
 }
 
 .add-products{
 	display: flex;
 	justify-content: space-between;
-	padding: 15px;
-	border-radius: 5px;
+	padding: 15px 10px 15px 15px
 }
 
 .product-name {
 	display: inline-block;
-	width: 80%;
+	width: 82%;
 	height: 30px;
 	padding-left: 10px;
+	border: 1px solid #cbcbcb;
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	font-size: 15px;
 }
 
 .add-product-button{
 	display: inline-block;
-	width: 20%;
-	height: 36px;
-	background-color: blue;
+	width: 18%;
+	background-color: #2184cf;
 	color: white;
 	font-weight: bold;
+	font-size: 16px;
 	border: none;
-	border-bottom: 4px solid darkblue;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 4px solid #2275b7;
 }
 
 .product-list{
@@ -71,14 +113,17 @@
 	background-color: white;
 	align-items: center;
 	padding: 10px;
-	border-bottom: 1px solid lightgray;
 	border-top: 1px solid lightgray;
 	border-radius: 0;
 }
 
-.delete-product-button{
+.product-state{
 	font-weight: bold;
-	padding: 5px 13px 5px 13px;
+	padding: 7px 17px 7px 17px;
+	color: #828282;
+	border-radius: 5px;
+	border: 1px solid #cbcbcb;
+	border-bottom: 3px solid #b0b0b0;;
 }
 
 .round-button{
@@ -86,19 +131,117 @@
 	color: white;
 	font-weight: bold;
 	border: none;
-	width: 25px;
-	height: 25px;
+	width: 30px;
+	height: 30px;
 	text-align: center;
 }
 
 .minus-button{
-	background-color: red;
+	background-color: #db2828;
+	border-bottom: 4px solid #c21f1f;
 }
 
 .plus-button{
-	background-color: green;
+	background-color: #21b945;
+	border-bottom: 4px solid #1d9c3b;
+}
+
+.product-delete{
+	background-color: #db2828;
+	border: none;
+	color: white;
+	border-radius: 5px;
+	height: 30px;
+	width: 30px;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+.product-control{
+	display: flex;
+	align-content: center;
+	width: 140px;
+	justify-content: flex-end;
 }
 
 .product-label{
+	width: 80px;
+}
 
+.cart-list-item{
+	display: flex;
+	justify-content: space-between;
+	background-color: white;
+	align-items: center;
+	padding: 15px;
+	border-top: 1px solid lightgray;
+	border-radius: 0;
+	height: 30px;
+}
+
+.cart-container{
+	background-color: white;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.left-badges{
+	display: flex;
+}
+
+.badge{
+	display: flex;
+	align-items: center;
+	background-color: #e7e7e7;
+	border-radius: 5px;
+	padding: 5px 10px 5px 10px;
+	height: 25px;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.badge-text{
+	margin-right: 5px;
+	font-size: 12px;
+	color: #828282;
+}
+
+.badge-amount{
+	border-radius: 50%;
+	background-color: #f1711c;
+	color: white;
+	width: 20px;
+	height: 20px;
+	font-size: 11px;
+	text-align: center;
+	line-height: 20px;
+}
+
+@media (max-width: 500px) {
+	body{
+		font-size: 14px;
+	}
+
+	.add-products{
+		flex-direction: column;
+	}
+
+	.product-name {
+		width: 186px;
+		border-radius: 5px;
+	}
+
+	.add-product-button{
+		width: 200px;
+		border-radius: 5px;
+	}
+
+	.container {
+		flex-direction: column;
+	}
+
+	.cart-container{
+		margin-top: 20px;
+	}
 }

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <title>My Page</title>
 
-    <link rel="stylesheet" type="text/css" href="main.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
 	<div class="container">
@@ -18,12 +18,13 @@
 			</div>
 			<ul class="product-list">
 				<li class="product-item">
-					<p class="product-label"><del>Apple</del></p>
+					<p class="product-label"><del>Помідори</del></p>
 					<div class="product-amount">
 						<p class="amount-text">2</p>
 					</div>
-					<button class="delete-product-button">Не куплено</button>
-
+					<div class="product-control">
+						<button class="product-state">Не куплено</button>
+					</div>
 				</li>
 				<li class="product-item">
 					<p class="product-label">Печиво</p>
@@ -32,18 +33,52 @@
 						<p class="amount-text">2</p>
 						<button class="plus-button round-button">+</button>
 					</div>
-					<button class="delete-product-button">Куплено</button>
-
+					<div class="product-control">
+						<button class="product-state">Куплено</button>
+						<button class="product-delete">×</button>
+					</div>
 				</li>
 				<li class="product-item">
 					<p class="product-label">Сир</p>
 					<div class="product-amount">
-						<button class="minus-button round-button">-</button>
+						<button class="minus-button round-button transparent-item">-</button>
 						<p class="amount-text">1</p>
 						<button class="plus-button round-button">+</button>
 					</div>
-					<button class="delete-product-button">Куплено</button>
-
+					<div class="product-control">
+						<button class="product-state">Куплено</button>
+						<button class="product-delete">×</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="cart-container">
+			<ul>
+				<li class="cart-list-item">
+					<h2>Залишилося</h2>
+				</li>
+				<li class="cart-list-item">
+					<div class="left-badges">
+						<div class="badge">
+							<p class="badge-text">Печиво</p>
+							<p class="badge-amount">2</p>
+						</div>
+						<div class="badge">
+							<p class="badge-text">Сир</p>
+							<p class="badge-amount">1</p>
+						</div>
+					</div>
+				</li>
+				<li class="cart-list-item">
+					<h2>Куплено</h2>
+				</li>
+				<li class="cart-list-item">
+					<div class="bought-badges">
+						<div class="badge crossed-out">
+							<p class="badge-text">Помідори</p>
+							<p class="badge-amount">2</p>
+						</div>
+					</div>
 				</li>
 			</ul>
 		</div>
