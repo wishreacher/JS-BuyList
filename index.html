@@ -14,7 +14,7 @@
 		<div class="add-products-container">
 			<div class="add-products">
 				<input type="text" class="product-name" placeholder="Назва товару" />
-				<button class="add-product-button">Додати</button>
+				<button class="add-product-button" data-tooltip="Add product">Додати</button>
 			</div>
 			<ul class="product-list">
 				<li class="product-item">
@@ -23,31 +23,31 @@
 						<p class="amount-text">2</p>
 					</div>
 					<div class="product-control">
-						<button class="product-state">Не куплено</button>
+						<button class="product-state" data-tooltip="Статус">Не куплено</button>
 					</div>
 				</li>
 				<li class="product-item">
 					<p class="product-label">Печиво</p>
 					<div class="product-amount">
-						<button class="minus-button round-button">-</button>
+						<button class="minus-button round-button" data-tooltip="-">-</button>
 						<p class="amount-text">2</p>
-						<button class="plus-button round-button">+</button>
+						<button class="plus-button round-button" data-tooltip="+">+</button>
 					</div>
 					<div class="product-control">
-						<button class="product-state">Куплено</button>
-						<button class="product-delete">×</button>
+						<button class="product-state" data-tooltip="Статус">Куплено</button>
+						<button class="product-delete" data-tooltip="Видалити">×</button>
 					</div>
 				</li>
 				<li class="product-item">
 					<p class="product-label">Сир</p>
 					<div class="product-amount">
-						<button class="minus-button round-button transparent-item">-</button>
+						<button class="minus-button round-button transparent-item" data-tooltip="-">-</button>
 						<p class="amount-text">1</p>
-						<button class="plus-button round-button">+</button>
+						<button class="plus-button round-button" data-tooltip="+">+</button>
 					</div>
 					<div class="product-control">
-						<button class="product-state">Куплено</button>
-						<button class="product-delete">×</button>
+						<button class="product-state" data-tooltip="Статус">Куплено</button>
+						<button class="product-delete" data-tooltip="Видалити">×</button>
 					</div>
 				</li>
 			</ul>

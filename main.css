@@ -10,6 +10,43 @@ ul{
 	margin: 0;
 }
 
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateX(-50%) translateY(100%) scale(0.5);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(-50%) scale(1);
+	}
+}
+
+button {
+	position: relative;
+}
+
+button::after {
+	content: attr(data-tooltip);
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	transform: translateX(-50%) translateY(100%) scale(0.8);
+	background-color: #aa10f5;
+	color: #fff;
+	padding: 5px 15px 5px 15px;
+	border-radius: 10px;
+	white-space: nowrap;
+	font-size: 11px;
+	opacity: 0;
+	transition: transform 0.5s, opacity 0.5s;
+	z-index: 9999;
+}
+
+button:hover::after {
+	transform: translateX(-50%) translateY(-20%) scale(1);
+	opacity: 1;
+}
+
 .crossed-out {
 	text-decoration: line-through;
 }
