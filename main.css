@@ -321,3 +321,18 @@ button:hover::after {
 		margin-top: 20px;
 	}
 }
+
+@media print {
+	.credit {
+		background-color: white;
+		border: 1px solid #aa10f5; /* Adjust as needed */
+	}
+
+	.name{
+		color: #000;
+	}
+
+	.credit-title {
+		display: none;
+	}
+}
