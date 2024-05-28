@@ -294,7 +294,7 @@ button:hover::after {
 	font-size: 14px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 840px) {
 	body{
 		font-size: 14px;
 	}
