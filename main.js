@@ -8,12 +8,12 @@ function createProductItem(productName) {
     newListItem.innerHTML = `
         <p class="product-label">${productName}</p>
         <div class="product-amount">
-            <button class="minus-button round-button" data-tooltip="-">-</button>
+            <button class="minus-button round-button transparent-item" data-tooltip="-">-</button>
             <p class="amount-text">1</p>
             <button class="plus-button round-button" data-tooltip="+">+</button>
         </div>
         <div class="product-control">
-            <button class="product-state" data-tooltip="Статус">Куплено</button>
+            <button class="product-state" data-tooltip="Статус">Не куплено</button>
             <button class="product-delete" data-tooltip="Видалити">×</button>
         </div>
     `;
@@ -32,3 +32,40 @@ document.getElementById('add-product-button').onclick = function() {
     productName.value = '';
     productName.focus();
 }
+
+var container = document.getElementById('container');
+container.addEventListener('click', function(event) {
+    if (event.target.className === 'product-delete') {
+        event.target.closest('.product-item').remove();
+    }
+    // if(event.target.className === 'product-state') {
+    //     var stateButton = event.target;
+    //     if(stateButton.textContent === 'Не куплено') {
+    //         stateButton.textContent = 'Куплено';
+    //     } else {
+    //         stateButton.textContent = 'Не куплено';
+    //     }
+    // }
+    if(event.target.classList.contains('minus-button')) {
+        var amountText = event.target.nextElementSibling;
+        var amount = parseInt(amountText.textContent);
+        if (amount > 1) {
+            amountText.textContent = amount - 1;
+        }
+        if (amountText.textContent == 1) {
+            event.target.classList.add('transparent-item');
+        }
+    }
+
+    if (event.target.classList.contains('plus-button')) {
+        var amountText = event.target.previousElementSibling;
+        var amount = parseInt(amountText.textContent);
+        amountText.textContent = amount + 1;
+
+        // Get the corresponding minus button
+        var minusButton = amountText.previousElementSibling;
+
+        // Remove the 'transparent-item' class from the minus button
+        minusButton.classList.remove('transparent-item');
+    }
+});

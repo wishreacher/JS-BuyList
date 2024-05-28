@@ -198,7 +198,7 @@ button:hover::after {
 .product-control{
 	display: flex;
 	align-content: center;
-	width: 140px;
+	width: 150px;
 	justify-content: flex-end;
 }
 

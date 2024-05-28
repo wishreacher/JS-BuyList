@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-	<div class="container">
+	<div id="container" class="container">
 		<div class="add-products-container">
 			<div class="add-products">
 				<input id="product-name" type="text" class="product-name" placeholder="Назва товару" />
@@ -23,18 +23,18 @@
 						<p class="amount-text">2</p>
 					</div>
 					<div class="product-control">
-						<button id="status" class="product-state" data-tooltip="Статус">Не куплено</button>
+						<button id="status" class="product-state" data-tooltip="Статус">Куплено</button>
 					</div>
 				</li>
 				<li class="product-item">
 					<p class="product-label">Печиво</p>
 					<div class="product-amount">
-						<button id="minus-product" class="minus-button round-button" data-tooltip="-">-</button>
+						<button  class="minus-button round-button" data-tooltip="-">-</button>
 						<p class="amount-text">2</p>
-						<button id="plus-product" class="plus-button round-button" data-tooltip="+">+</button>
+						<button class="plus-button round-button" data-tooltip="+">+</button>
 					</div>
 					<div class="product-control">
-						<button class="product-state" data-tooltip="Статус">Куплено</button>
+						<button class="product-state" data-tooltip="Статус">Не куплено</button>
 						<button id="delete-product" class="product-delete" data-tooltip="Видалити">×</button>
 					</div>
 				</li>
@@ -46,7 +46,7 @@
 						<button class="plus-button round-button" data-tooltip="+">+</button>
 					</div>
 					<div class="product-control">
-						<button class="product-state" data-tooltip="Статус">Куплено</button>
+						<button class="product-state" data-tooltip="Статус">Не куплено</button>
 						<button class="product-delete" data-tooltip="Видалити">×</button>
 					</div>
 				</li>
