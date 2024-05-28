@@ -1,10 +1,8 @@
 function createProductItem(productName) {
     var newListItem = document.createElement('li');
 
-    // Add class to the new li element
     newListItem.className = 'product-item';
 
-    // Set the content of the new li element
     newListItem.innerHTML = `
         <p class="product-label">${productName}</p>
         <div class="product-amount">
@@ -18,7 +16,6 @@ function createProductItem(productName) {
         </div>
     `;
 
-    // Append the new li element to the product-list
     document.querySelector('.product-list').appendChild(newListItem);
 }
 
@@ -38,14 +35,7 @@ container.addEventListener('click', function(event) {
     if (event.target.className === 'product-delete') {
         event.target.closest('.product-item').remove();
     }
-    // if(event.target.className === 'product-state') {
-    //     var stateButton = event.target;
-    //     if(stateButton.textContent === 'Не куплено') {
-    //         stateButton.textContent = 'Куплено';
-    //     } else {
-    //         stateButton.textContent = 'Не куплено';
-    //     }
-    // }
+
     if(event.target.classList.contains('minus-button')) {
         var amountText = event.target.nextElementSibling;
         var amount = parseInt(amountText.textContent);
@@ -62,10 +52,8 @@ container.addEventListener('click', function(event) {
         var amount = parseInt(amountText.textContent);
         amountText.textContent = amount + 1;
 
-        // Get the corresponding minus button
         var minusButton = amountText.previousElementSibling;
 
-        // Remove the 'transparent-item' class from the minus button
         minusButton.classList.remove('transparent-item');
     }
 
@@ -78,14 +66,12 @@ container.addEventListener('click', function(event) {
         var deleteButton = productItem.querySelector('.product-delete');
 
         if(stateButton.textContent === 'Не куплено') {
-            // Mark the product as bought
             stateButton.textContent = 'Куплено';
             productLabel.classList.add('crossed-out');
             minusButton.style.display = 'none';
             plusButton.style.display = 'none';
             deleteButton.style.display = 'none';
         } else {
-            // Mark the product as not bought
             stateButton.textContent = 'Не куплено';
             productLabel.classList.remove('crossed-out');
             minusButton.style.display = '';
@@ -93,4 +79,30 @@ container.addEventListener('click', function(event) {
             deleteButton.style.display = '';
         }
     }
+
+    if(event.target.classList.contains('product-label')) {
+        var productLabel = event.target;
+        var productName = productLabel.textContent;
+
+        var inputField = document.createElement('input');
+        inputField.type = 'text';
+        inputField.value = productName;
+
+        var productLabelWidth = parseFloat(window.getComputedStyle(productLabel).width);
+        var adjustedWidth = productLabelWidth - 8;
+        inputField.style.width = adjustedWidth + 'px';
+
+        productLabel.replaceWith(inputField);
+
+        inputField.focus();
+
+        inputField.addEventListener('focusout', function() {
+            var updatedProductName = inputField.value;
+
+            inputField.replaceWith(productLabel);
+
+            productLabel.textContent = updatedProductName;
+        });
+    }
+
 });
