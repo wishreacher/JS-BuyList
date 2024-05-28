@@ -68,4 +68,29 @@ container.addEventListener('click', function(event) {
         // Remove the 'transparent-item' class from the minus button
         minusButton.classList.remove('transparent-item');
     }
+
+    if(event.target.classList.contains('product-state')) {
+        var stateButton = event.target;
+        var productItem = stateButton.closest('.product-item');
+        var productLabel = productItem.querySelector('.product-label');
+        var minusButton = productItem.querySelector('.minus-button');
+        var plusButton = productItem.querySelector('.plus-button');
+        var deleteButton = productItem.querySelector('.product-delete');
+
+        if(stateButton.textContent === 'Не куплено') {
+            // Mark the product as bought
+            stateButton.textContent = 'Куплено';
+            productLabel.classList.add('crossed-out');
+            minusButton.style.display = 'none';
+            plusButton.style.display = 'none';
+            deleteButton.style.display = 'none';
+        } else {
+            // Mark the product as not bought
+            stateButton.textContent = 'Не куплено';
+            productLabel.classList.remove('crossed-out');
+            minusButton.style.display = '';
+            plusButton.style.display = '';
+            deleteButton.style.display = '';
+        }
+    }
 });
