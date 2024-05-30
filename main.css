@@ -86,10 +86,10 @@ button:hover::after {
 .container {
 	background-color: lightgray;
 	width: 80%;
-	height: 100%;
 	margin: 0 auto;
 	padding: 10px 10px 20px 5px;
 	display: flex;
+	align-items: flex-start;
 }
 
 .add-products-container{
@@ -214,10 +214,11 @@ button:hover::after {
 	padding: 15px;
 	border-top: 1px solid lightgray;
 	border-radius: 0;
-	height: 30px;
+	/*height: 30px;*/
 }
 
 .cart-container{
+	width: 300px;
 	background-color: white;
 	overflow: hidden;
 	border-radius: 5px;
@@ -236,6 +237,7 @@ button:hover::after {
 	height: 25px;
 	font-weight: bold;
 	margin-right: 5px;
+	margin-bottom: 5px;
 }
 
 .badge-text{
@@ -292,6 +294,12 @@ button:hover::after {
 
 .name-style{
 	font-size: 14px;
+}
+
+.left-badges, .bought-badges {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
 }
 
 @media (max-width: 840px) {

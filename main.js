@@ -1,3 +1,8 @@
+window.onload = function() {
+    updateToBuyStats();
+    updateBoughtStats();
+}
+
 function createProductItem(productName) {
     var newListItem = document.createElement('li');
 
@@ -30,13 +35,52 @@ document.getElementById('add-product-button').onclick = function() {
     productName.focus();
 }
 
+function updateToBuyStats() {
+    var toBuyStats = document.querySelector('.left-badges');
+    toBuyStats.innerHTML = ''; // Clear the current stats
+
+    var productItems = document.querySelectorAll('.product-item');
+    productItems.forEach(function(productItem) {
+        var stateButton = productItem.querySelector('.product-state');
+        if(stateButton.textContent === 'Не куплено') {
+            var productName = productItem.querySelector('.product-label').textContent;
+            var productQuantity = productItem.querySelector('.amount-text').textContent;
+
+            var badge = document.createElement('div');
+            badge.className = 'badge';
+            badge.innerHTML = `<p class="badge-text">${productName}</p><p class="badge-amount">${productQuantity}</p>`;
+            toBuyStats.appendChild(badge);
+        }
+    });
+}
+
+function updateBoughtStats() {
+    var boughtStats = document.querySelector('.bought-badges');
+    boughtStats.innerHTML = ''; // Clear the current stats
+
+    var productItems = document.querySelectorAll('.product-item');
+    productItems.forEach(function(productItem) {
+        var stateButton = productItem.querySelector('.product-state');
+        if(stateButton.textContent === 'Куплено') {
+            var productName = productItem.querySelector('.product-label').textContent;
+            var productQuantity = productItem.querySelector('.amount-text').textContent;
+
+            var badge = document.createElement('div');
+            badge.className = 'badge crossed-out';
+            badge.innerHTML = `<p class="badge-text">${productName}</p><p class="badge-amount">${productQuantity}</p>`;
+            boughtStats.appendChild(badge);
+        }
+    });
+}
+
+// Call these functions whenever a product's name, quantity, status, or existence changes
 var container = document.getElementById('container');
-container.addEventListener('click', function(event) {
+container.addEventListener('click', function (event) {
     if (event.target.className === 'product-delete') {
         event.target.closest('.product-item').remove();
     }
 
-    if(event.target.classList.contains('minus-button')) {
+    if (event.target.classList.contains('minus-button')) {
         var amountText = event.target.nextElementSibling;
         var amount = parseInt(amountText.textContent);
         if (amount > 1) {
@@ -57,7 +101,7 @@ container.addEventListener('click', function(event) {
         minusButton.classList.remove('transparent-item');
     }
 
-    if(event.target.classList.contains('product-state')) {
+    if (event.target.classList.contains('product-state')) {
         var stateButton = event.target;
         var productItem = stateButton.closest('.product-item');
         var productLabel = productItem.querySelector('.product-label');
@@ -65,7 +109,7 @@ container.addEventListener('click', function(event) {
         var plusButton = productItem.querySelector('.plus-button');
         var deleteButton = productItem.querySelector('.product-delete');
 
-        if(stateButton.textContent === 'Не куплено') {
+        if (stateButton.textContent === 'Не куплено') {
             stateButton.textContent = 'Куплено';
             productLabel.classList.add('crossed-out');
             minusButton.style.display = 'none';
@@ -80,7 +124,7 @@ container.addEventListener('click', function(event) {
         }
     }
 
-    if(event.target.classList.contains('product-label')) {
+    if (event.target.classList.contains('product-label')) {
         var productLabel = event.target;
         var productName = productLabel.textContent;
 
@@ -96,7 +140,7 @@ container.addEventListener('click', function(event) {
 
         inputField.focus();
 
-        inputField.addEventListener('focusout', function() {
+        inputField.addEventListener('focusout', function () {
             var updatedProductName = inputField.value;
 
             inputField.replaceWith(productLabel);
@@ -105,4 +149,6 @@ container.addEventListener('click', function(event) {
         });
     }
 
+    updateToBuyStats();
+    updateBoughtStats();
 });
