@@ -144,9 +144,11 @@ container.addEventListener('click', function (event) {
             var updatedProductName = inputField.value;
 
             inputField.replaceWith(productLabel);
-
             productLabel.textContent = updatedProductName;
+            updateToBuyStats();
+            updateBoughtStats();
         });
+        return;
     }
 
     updateToBuyStats();
