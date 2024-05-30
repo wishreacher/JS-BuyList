@@ -47,6 +47,22 @@ button:hover::after {
 	opacity: 1;
 }
 
+.product-delete::after {
+	transform: translateX(-75%) translateY(100%) scale(0.8);
+}
+
+.product-delete:hover::after {
+	transform: translateX(-75%) translateY(-20%) scale(1);
+}
+
+.add-product-button::after {
+	transform: translateX(-50%) translateY(100%) scale(0.8);
+}
+
+.add-product-button:hover::after {
+	transform: translateX(-50%) translateY(220%) scale(1);
+}
+
 .crossed-out {
 	text-decoration: line-through;
 }
@@ -99,7 +115,6 @@ button:hover::after {
 	overflow: hidden;
 	border-radius: 5px;
 	height: 90%;
-
 }
 
 .cart-container{
